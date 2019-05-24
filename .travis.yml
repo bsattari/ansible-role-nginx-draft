@@ -1,0 +1,10 @@
+---
+language: python
+python: "2.7"
+
+install:
+  pip install ansible
+  pip install ansible-lint
+  pip install yumllint
+
+script: ansible-playbook ansible/foreman.yml --syntax-check
