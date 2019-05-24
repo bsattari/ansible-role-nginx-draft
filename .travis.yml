@@ -4,4 +4,6 @@ python: "2.7"
 
 install: pip install ansible ansible-lint yamllint
 
-script: ansible-playbook ansible/foreman.yml --syntax-check
+script:
+ - ansible-lint ./
+ - yamllint ./
