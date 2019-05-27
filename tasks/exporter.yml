@@ -7,11 +7,10 @@
 
 - name: system user
   become: true
-  group:
+  user:
     name: nginx-exp
-    #group: nginx-exp
-    state: present
-
+    group: nginx-exp
+    
 - name: Download nginx-exporter
   become: true
   get_url:
