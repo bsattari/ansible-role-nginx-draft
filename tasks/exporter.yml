@@ -23,7 +23,7 @@
   become: true
   file:
     path: /etc/nginx-exporter
-    state: directoty
+    state: directory
 
 - name: Extract "nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz" into /etc/nginx-exporter/
   become: true
