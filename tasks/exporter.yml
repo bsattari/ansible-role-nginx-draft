@@ -9,7 +9,7 @@
   become: true
   group:
     name: nginx-exp
-    group: nginx-exp
+    #group: nginx-exp
     state: present
 
 - name: Download nginx-exporter
