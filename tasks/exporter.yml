@@ -21,8 +21,9 @@
 
 - name: creates directory nginx-exporter
   become: true
-  file: /etc/nginx-exporter
-  state: directoty
+  file:
+    path: /etc/nginx-exporter
+    state: directoty
 
 - name: Extract "nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz" into /etc/nginx-exporter/
   become: true
