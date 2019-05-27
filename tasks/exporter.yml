@@ -16,14 +16,14 @@
   become: true
   get_url:
     url: https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v0.3.0/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
-    dest: /etc/
+    dest: ./
     mode: '0440'
 
 - name: Extract "nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz" into /etc/nginx-exporter/
   become: true
   unarchive:
-    src: /etc/
-    dest: /etc/
+    src: ./
+    dest: ./
 
 - name: Template a file
   become: true
