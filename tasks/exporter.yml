@@ -45,6 +45,7 @@
   template:
     src: /template/tng.j2
     dest: /etc/systemd/system/nginx_exporter.service
+    remote_src: yes
     owner: nging-exp
     group: nging-exp
     mode: '0644'
