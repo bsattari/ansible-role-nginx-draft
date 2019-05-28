@@ -43,11 +43,11 @@
 - name: Template a file
   become: true
   template:
-    src: tng.j2
+    src: ./templates/tng.j2
     dest: /etc/systemd/system/nginx_exporter.service
     remote_src: yes
-    owner: nginx-exp
-    group: nginx-exp
+    owner: bin
+    group: wheel
     mode: '0644'
 
 - name: Make sure nginx_exporter service is running
