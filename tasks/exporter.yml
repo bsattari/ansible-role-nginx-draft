@@ -15,25 +15,25 @@
 - name: creates directory nginx-exporter
   become: true
   file:
-    path: /etc/nginx-exporter
-    owner: nginx-exp
-    group: nginx-exp
+    path: ./etc/nginx-exporter
+    #owner: nginx-exp
+    #group: nginx-exp
     state: directory
-    mode: '0644'
-    recurse: true
+    #mode: '0775'
+    #recurse: true
 
 - name: Download nginx-exporter
   become: true
   get_url:
     url: https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v0.3.0/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
-    dest: /etc/nginx-exporter/
+    dest: ./etc/nginx-exporter/
     mode: '0644'
 
 - name: Extract "nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz" into /etc/nginx-exporter/
   become: true
   unarchive:
-    src: /etc/nginx-exporter
-    dest: /etc/nginx-exporter
+    src: ./etc/nginx-exporter
+    dest: ./etc/nginx-exporter
 
 - name: Template a file
   become: true
