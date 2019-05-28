@@ -32,8 +32,8 @@
 - name: Extract "nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz" into /etc/nginx-exporter/
   become: true
   unarchive:
-    src: /etc/nginx-exporter/
-    dest: /etc/nginx-exporter/
+    src: /etc/nginx-exporter
+    dest: /etc/nginx-exporter
 
 - name: Template a file
   become: true
