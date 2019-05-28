@@ -19,7 +19,7 @@
     owner: nginx-exp
     group: nginx-exp
     state: directory
-    mode: 0775
+    mode: '0644'
     recurse: true
 
 - name: Download nginx-exporter
@@ -27,7 +27,7 @@
   get_url:
     url: https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v0.3.0/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
     dest: /etc/nginx-exporter/
-    mode: '0440'
+    mode: '0644'
 
 - name: Extract "nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz" into /etc/nginx-exporter/
   become: true
