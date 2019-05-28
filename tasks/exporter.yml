@@ -12,13 +12,13 @@
     group: nginx-exp
     append: true
 
-- name: install unzip
-  become: true
-  package:
-    name: "{{ item }}"
-    state: latest
-  with_items:
-    - unzip
+#- name: install unzip
+#  become: true
+#  package:
+#    name: "{{ item }}"
+#    state: latest
+#  with_items:
+#    - unzip
 
 - name: creates directory nginx-exporter
   become: true
@@ -45,9 +45,9 @@
   template:
     src: ./template/tng.j2
     dest: /etc/systemd/system/nginx_exporter.service
-    owner: nging-exp
-    group: nging-exp
-    mode: '0644'
+    #owner: nging-exp
+    #group: nging-exp
+    #mode: '0644'
 
 - name: Make sure nginx_exporter service is running
   become: true
