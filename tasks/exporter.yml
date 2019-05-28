@@ -12,6 +12,14 @@
     group: nginx-exp
     append: true
 
+- name: install unzip
+  become: true
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - unzip
+
 - name: creates directory nginx-exporter
   become: true
   file:
