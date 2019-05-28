@@ -12,13 +12,6 @@
     group: nginx-exp
     append: true
 
-- name: Download nginx-exporter
-  become: true
-  get_url:
-    url: https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v0.3.0/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
-    dest: /etc/nginx-exporter/
-    mode: '0440'
-
 - name: creates directory nginx-exporter
   become: true
   file:
@@ -28,6 +21,13 @@
     state: directory
     mode: 0775
     recurse: true
+
+- name: Download nginx-exporter
+  become: true
+  get_url:
+    url: https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v0.3.0/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
+    dest: /etc/nginx-exporter/
+    mode: '0440'
 
 - name: Extract "nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz" into /etc/nginx-exporter/
   become: true
