@@ -4,4 +4,4 @@
   service:
     name: nginx
     state: started
-    #enabled: false
+    enabled: true
