@@ -35,7 +35,11 @@
 - name: Template a file
   become: true
   template:
+<<<<<<< HEAD
     src: ./template/tng.j2
+=======
+    src: /template/tng.j2
+>>>>>>> 498a9b6d2863e1cd7ff8f3f0be3775a67dae1b5e
     dest: /etc/systemd/system/nginx_exporter.service
     remote_src: true
     owner: nginx_user 
