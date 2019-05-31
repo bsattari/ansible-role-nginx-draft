@@ -58,8 +58,8 @@
 - name: Check that a page does not return word nginx_up 1
   become: true
   uri:
-    url: http://localhost:9113/metrics/
-    method: GET
+    url: http://localhost:9113/metrics
+    #method: GET
     return_content: true
   register: this
   failed_when: "'nginx_up 1' not in this.content"
@@ -67,8 +67,8 @@
 - name: fail playbook when GET request to port localhost:80 does not return status code 200
   become: true
   uri:
-    url: http://localhost:80
-    method: GET
+    url: http://localhost
+    #method: GET
     status_code: 200
   register: this
-  failed_when: false 
+  failed_when: False 
