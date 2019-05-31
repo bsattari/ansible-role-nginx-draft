@@ -58,7 +58,7 @@
 - name: Check that a page does not return word nginx_up 1
   become: true
   uri:
-    url: localhost:9113/metrics
+    url: http://localhost:9113/metrics
     method: GET
     return_content: true
   register: this
@@ -67,7 +67,7 @@
 - name: fail playbook when GET request to port localhost:80 does not return status code 200
   become: true
   uri:
-    url: localhost:80
+    url: http://localhost:80
     method: GET
   register: this
   failed_when: "statuse_code<>200"
