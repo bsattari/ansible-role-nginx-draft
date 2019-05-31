@@ -58,7 +58,7 @@
 - name: Check that a page does not return word nginx_up 1
   become: true
   uri:
-    port: localhost:9113/metrics
+    url: localhost:9113/metrics
     method: GET
     return_content: true
   register: this
