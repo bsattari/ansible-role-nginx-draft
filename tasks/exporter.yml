@@ -58,7 +58,7 @@
 - name: Check that a page does not return word nginx_up 1
   become: true
   uri:
-    url: http://localhost:9113/metrics
+    url: http://localhost:9113/metrics/
     method: GET
     return_content: true
   register: this
@@ -70,4 +70,5 @@
     url: http://localhost:80
     method: GET
   register: this
-  failed_when: "statuse_code<>200"
+  status_code: 200
+  failed_when: false 
