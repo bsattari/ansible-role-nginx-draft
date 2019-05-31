@@ -22,7 +22,8 @@
 - name: Download nginx-exporter
   become: true
   get_url:
-    url: https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v0.3.0/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
+#    url: https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v0.3.0/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
+    url: https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v0.4.0/nginx-prometheus-exporter-0.4.0-linux-amd64.tar.gz
     dest: /nginx-exporter/
     mode: '0644'
 
