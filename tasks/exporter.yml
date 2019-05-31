@@ -36,7 +36,7 @@
 - name: Template a file
   become: true
   template:
-    src: /home/bsattari/Configuration_Management/behrouz_configuration_management_21/ansible-role-nginx-draft/template/tng.j2
+    src: ./template/tng.j2
     dest: /etc/systemd/system/nginx_exporter.service
     remote_src: true
     owner: "{{ nginx_user }}"
