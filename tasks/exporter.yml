@@ -69,6 +69,6 @@
   uri:
     url: http://localhost:80
     method: GET
+    status_code: 200
   register: this
-  status_code: 200
   failed_when: false 
