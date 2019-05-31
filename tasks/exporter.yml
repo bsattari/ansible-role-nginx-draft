@@ -2,14 +2,15 @@
 - name: system group
   become: true
   group:
-    name: nginx-exp
+    name: nginx_exp
     state: present
 
 - name: system user
   become: true
   user:
     name: nginx-exp
-    group: nginx-exp
+    shell: /bin/bash
+    group: nginx_exp
     append: true
 
 - name: creates directory nginx-exporter
