@@ -44,22 +44,21 @@
 
 - name: Make sure nginx_exporter service is running
   become: true
-  service:
-    name: nginx_exporter.service
+  systemd:
     state: started
+    name: nginx_exporter 
 
-- name: Make sure nginx_exporter service is enable
-  become: true
-  service:
-    name: nginx_exporter.service
-    enabled: true
+#- name: Make sure nginx_exporter service is enable
+#  become: true
+#  service:
+#    name: nginx_exporter.service
+#    enabled: true
 
 
 - name: Check that a page does not return word nginx_up 1
   become: true
   uri:
     url: http://localhost:9113/metrics
-    #method: GET
     return_content: true
   register: this
   failed_when: "'nginx_up 1' not in this.content"
@@ -67,8 +66,7 @@
 - name: fail playbook when GET request to port localhost:80 does not return status code 200
   become: true
   uri:
-    url: http://localhost
-    #method: GET
+    url: http://localhost:80
     status_code: 200
   register: this
   failed_when: False 
